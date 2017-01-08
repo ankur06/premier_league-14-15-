@@ -1,3 +1,7 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 df= pd.read_csv('E0(14-15).csv')
 
 df= df[['home_team','away_team','full_time_home_goals','full_time_away_goals','full_time_result','home_team_shots','away_team_shots','home_team_shots_ontarget','away_team_shots_ontarget','home_fouls','away_fouls','home_corners','away_corners']]
@@ -66,13 +70,11 @@ def plots():
 	ax1.set_ylabel('total_goals', fontsize=20)
 	plt.show()
 
- 	
-	ax2= total_shots['total_shots'].plot()
+ 	ax2= total_shots['total_shots'].plot()
 	ax2.set_xticks(total_shots.index)
 	ax2.set_xticklabels(total_shots['team'],fontsize=7)
 	ax2.set_ylabel('total_shots', fontsize=20)
 	plt.show()
-
 
 	ax3= total_shots_ontarget['total_shots_ontarget'].plot()
 	ax3.set_xticks(total_shots_ontarget.index)
@@ -92,8 +94,8 @@ def plots():
 	ax5.set_ylabel('total_corners', fontsize=20)
 	plt.show()
 
+	
+plot()	
 """
 By visualising the plots we can infer that total_goals,total_shots_ontarget are the most important metrics because they are inline with the league top teams
 """
-
-
